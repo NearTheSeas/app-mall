@@ -1,0 +1,8 @@
+export const ADD_CART = 'ADD_CART'
+export const REDUCE_CART = 'REDUCE_CART'
+export const INIT_BUYCART = 'INIT_BUYCART'
+export const CLEAR_CART = 'CLEAR_CART'
+export const CONFIRM_REMARK = 'CONFIRM_REMARK'
+export const CHOOSE_ADDRESS = 'CHOOSE_ADDRESS'
+export const SET_LOCATION = 'SET_LOCATION'
+export const CLEAR_SELECTADD = 'CLEAR_SELECTADD'

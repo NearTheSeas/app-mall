@@ -11,20 +11,20 @@
                 <p>{{prod.name}}</p>
                 <p>
                     <!-- <span>月售 {{month_sales}}单</span> -->
-                    <span>售价 ¥{{prod.salePrice}}</span>
+                    <span>售价： ¥{{prod.salePrice}}</span>
                     <!-- <span v-if="foods.specfoods.length">起</span> -->
                 </p>
                  <p>
-                    <span>单位 {{prod.unit}}</span>
+                    <span>单位： {{prod.unit}}</span>
                 </p> 
                 <p>
-                    <span>规格 {{prod.specification}}</span>
+                    <span>规格： {{prod.specification}}</span>
                 </p>  
                 <p>
-                    <span>条码 {{prod.barcode}}</span>
+                    <span>条码： {{prod.barcode}}</span>
                 </p>
                 <p>
-                    <span>备注 {{prod.remarks}}</span>
+                    <span>备注： {{prod.remarks}}</span>
                 </p>
             </section>
             <buy-cart :prod='prod' @moveInCart="$emit('moveInCart')"></buy-cart>

@@ -15,7 +15,7 @@
               </div>
           </section>
           <section class="gotopay" :class="{gotopay_acitvity: totalNum > 0}">
-              <span class="gotopay_button_style" v-if="totalNum <= 0">请添加商品</span>
+              <span class="gotopay_button_style" v-if="totalNum <= 0">购物车为空</span>
               <router-link :to="{path:'/confirmOrder'}" class="gotopay_button_style" v-else >去结算</router-link>
           </section>
       </section>

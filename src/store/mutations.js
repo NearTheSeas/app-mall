@@ -7,7 +7,8 @@ import {
   CONFIRM_REMARK,
   CHOOSE_ADDRESS,
   SET_LOCATION,
-  CLEAR_SELECTADD
+  CLEAR_SELECTADD,
+  CLEAR_REMARK
 } from './mutation-types.js'
 
 import {
@@ -75,6 +76,12 @@ export default {
   }) {
     // state.remarkText = remarkText
     state.inputText = inputText
+  },
+
+  // 清空备注
+  [CLEAR_REMARK](state) {
+    // state.remarkText = remarkText
+    state.inputText = ''
   },
 
   //选择的地址

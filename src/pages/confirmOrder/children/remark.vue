@@ -3,7 +3,7 @@
         <section v-if="!showLoading">
             <head-top head-title="订单备注" go-back='true'></head-top>
             <section class="input_remark quick_remark">
-                <header class="header_style">其他备注</header>
+                <header class="header_style">备注</header>
                 <textarea class="input_text" v-model="inputContent" placeholder="请输入备注内容(可不填)"></textarea>
             </section>
             <div class="determine" @click="confirmRemark">确定</div>
@@ -38,7 +38,10 @@
         computed: {
             ...mapState([
                 'inputText'
-            ])
+            ]),
+            // inputContent:function(){
+            //     return this.inputText
+            // }
         },
         components: {
             headTop,
@@ -52,11 +55,12 @@
             //初始化信息
             initData(){
                 this.showLoading = false;
+                this.inputContent = this.inputText
             },
 
             //确认选择
             confirmRemark(){
-              console.log(this.inputContent)
+              
                 this.CONFIRM_REMARK({inputText: this.inputContent});
                 this.$router.go(-1);
             }

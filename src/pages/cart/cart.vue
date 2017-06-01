@@ -238,6 +238,8 @@ export default {
     }
     .list_container{
         background-color: #fff;
+        padding-bottom:4rem;
+        min-height: 100vh;
     }
     .list_li{
         display: flex;
@@ -428,7 +430,7 @@ export default {
         }
     }
     .buy_cart_container{
-        position: absolute;
+        position: fixed;
         background-color: #3d3d3f;
         bottom: 1.95rem;
         left: 0;

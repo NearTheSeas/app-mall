@@ -51,7 +51,7 @@
             return{
                 name: null, //姓名
                 phone: null, //电话
-                address_detail: '小区/写字楼/学校等', //详细地址
+                address_detail: '', //详细地址
                 
                 showAlert: false, //弹出框
                 alertText: null, //弹出框信息

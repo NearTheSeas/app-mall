@@ -1,6 +1,6 @@
  <template>
   	<div class="rating_page">
-        <head-top head-title="编辑地址" go-back='true'>
+        <head-top head-title="地址管理" go-back='true'>
         	<!-- <span slot="edit" class="edit" @click="editThing">{{editText}}</span> -->
         </head-top>
         <section class="address">

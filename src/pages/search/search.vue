@@ -10,7 +10,7 @@
             <ul class="list_container">
                 <router-link :to="{path: '/prodDetail', query:{ prod:item}}" tag="li" v-for="item in productList" :key="item.id" class="list_li">
                     <section class="item_left">
-                        <img :src="imgBaseUrl + item.image_path" class="restaurant_img">
+                        <img :src="imgBaseUrl + item.img" class="restaurant_img">
                     </section>
                     <section class="item_right">
                         <div class="item_right_text">

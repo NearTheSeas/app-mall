@@ -55,7 +55,7 @@
             </section>
             <!--备注-->
             <section class="pay_way container_style">
-                <router-link :to='{path: "/confirmOrder/remark", query: {}}' class="header_style">
+                <router-link :to='{path: "/confirmOrder/remark", query: {text:inputText}}' class="header_style">
                     <span>订单备注</span>
                     <div class="more_type">
                         <span class="ellipsis">{{inputText}}</span>
@@ -129,16 +129,17 @@
             }
         },
         created(){
+            
             //获取当前商铺购物车信息
             this.initData();
         },
-         filters: {
+        filters: {
             fixNum: function (value) {
-              return value.toFixed(2)
+                return value.toFixed(2)
             }
         },
         mounted(){
-          
+            this.CLEAR_REMARK();
         },
         components: {
             headTop,
@@ -152,7 +153,7 @@
         },
         methods: {
             ...mapMutations([
-                 'ADD_CART', 'CHOOSE_ADDRESS', 'CLEAR_CART'
+                 'ADD_CART', 'CHOOSE_ADDRESS', 'CLEAR_CART', 'CLEAR_REMARK'
             ]),
             //初始化数据
             initData(){
@@ -257,6 +258,7 @@
                         th.showAlert = true;
                         th.alertText = '下单成功';
                         th.CLEAR_CART();
+                        th.CLEAR_REMARK();
                         th.unableSubmit.forEach(function(item){
                             th.ADD_CART({ ...item})
                         })

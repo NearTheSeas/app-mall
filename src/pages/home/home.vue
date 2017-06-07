@@ -33,7 +33,7 @@
           <span class="shop_header_title">主推品</span>
         </header>
         <!--主推品列表-->
-        <shop-list   @moveInCart="listenInCart" @showMoveDotEvent="showMoveDotFun"></shop-list>
+        <shop-list  @moveInCart="listenInCart" @showMoveDotEvent="showMoveDotFun"></shop-list>
       </div>
       <!--底部菜单栏-->
       <foot-guide></foot-guide>

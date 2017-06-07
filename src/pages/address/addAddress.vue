@@ -49,6 +49,7 @@
     export default {
       data(){
             return{
+                linkId: null,
                 name: null, //姓名
                 phone: null, //电话
                 address_detail: '', //详细地址
@@ -57,6 +58,7 @@
                 alertText: null, //弹出框信息
                 poi_type: 0, //地址类型
                 userlocation:{lng: 116.404, lat: 39.915},
+                linkState: 1,
                
                 addressStr:null,
                 BMap:null,
@@ -68,6 +70,7 @@
         created(){
             let oldAdd = this.$route.query.address
             if(oldAdd){
+                this.linkId = oldAdd.linkId
                 this.name = oldAdd.linkName
                 this.phone = oldAdd.phone
                 this.userlocation.lng = oldAdd.longitude
@@ -78,6 +81,7 @@
                 this.olddistrict = oldAdd.district
                 this.showMap =  false
                 this.addressStr = oldAdd.province + oldAdd.city +  oldAdd.district
+                this.linkState = oldAdd.linkState
             }
         },
         computed: {
@@ -180,7 +184,7 @@
                     this.showAlert = true;
                     this.alertText = '电话号码格式有误'
                     return
-                }else if(!this.getAddressStr){
+                }else if(!this.getAddressStr && !this.addressStr){
                     this.showAlert = true;
                     this.alertText = '请选择地址'
                     return
@@ -189,7 +193,7 @@
                     this.alertText = '请输入门牌号等详细地址'
                     return
                 }
-                addNewAddress( this.name,  this.address_detail,   this.userlocation.longitude, this.userlocation.latitude, this.phone, this.province.value, this.city.value, this.district.value).then(res=>{
+                addNewAddress(this.linkId, this.name, this.address_detail, this.userlocation.longitude, this.userlocation.latitude, this.phone, this.province.value, this.city.value, this.district.value, this.linkState).then(res=>{
                   if (res.message) {
                     this.showAlert = true;
                     this.alertText = res.message;

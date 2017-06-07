@@ -67,6 +67,7 @@ export default {
 		loading
 	},
 	props: [
+		
   ],
 	mixins: [loadMore, getImgPath],
 	computed: {

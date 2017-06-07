@@ -150,10 +150,12 @@
             //初始化时获取基本数据
             initData(){
               let th =this
+             
               prodCategory().then(function(res){
                 if(!res.data){
                   return
                 }
+                
                 th.categoryList = res.data.data
                 th.selectLevelOne = th.categoryList[0].id
                 th.secondLevel = res.data.data[0].children
@@ -211,14 +213,16 @@
             },
             // 点击一级菜单
             chooseMenuOne(id){
-              this.selectLevelOne = id;
-              function selectCategory(item){
-                  return item.id == id;
-            }
-            //  设置一级分类下的第一个二级分类为展示项
-              this.secondLevel = this.categoryList.filter(selectCategory)[0].children;
-              this.selectLevelTwo = this.secondLevel && this.secondLevel[0].id
-              this.chooseMenu(this.selectLevelTwo)
+                this.showLoading = true,
+                this.selectLevelOne = id;
+                function selectCategory(item){
+                    return item.id == id;
+                }
+                //  设置一级分类下的第一个二级分类为展示项
+                this.secondLevel = this.categoryList.filter(selectCategory)[0].children;
+                this.selectLevelTwo = this.secondLevel && this.secondLevel[0].id
+                this.chooseMenu(this.selectLevelTwo)
+              
             },
             // 点击二级分类
             chooseMenu(id){
@@ -226,6 +230,7 @@
               let th = this
               getProdByCategory(id).then(function(result){
                 th.prodsShow = result.data.data
+                th.hideLoading();
               })
             },
             //隐藏动画

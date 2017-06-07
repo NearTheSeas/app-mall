@@ -242,9 +242,9 @@
                 this.preventRepeat = true
                 var th = this
                 let data = {
-                  "linkId":this.choosedAddress.linkId,
-                  "payType":this.payWay.value,
-                  "remark":this.inputText,
+                  "linkId": this.choosedAddress.linkId,
+                  "payType": this.payWay.value,
+                  "remark": this.inputText,
                   "items": this.orderDetail
                 }
                 if(this.orderDetail.length <=0 ){

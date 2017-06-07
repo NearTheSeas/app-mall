@@ -101,9 +101,9 @@ var getOrderList = (pageNo = 1, pageSize = 10) => {
 }
 
 // 保存用户地址
-var addNewAddress = (name,  address_detail, longitude, latitude, phone, province, city, district) => {
+var addNewAddress = (linkId, name,  address_detail, longitude, latitude, phone, province, city, district, linkState) => {
     return axios.post(getUrl('/api/customer/editAddress'), {
-      ...loginData, linkname: name, address: address_detail,  longitude, latitude, phone, province, city, district, isDefault:0
+      ...loginData, linkId,  linkname: name, address: address_detail,  longitude, latitude, phone, province, city, district, linkState, isDefault: 0
     })
 };
 

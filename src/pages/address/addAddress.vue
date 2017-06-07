@@ -193,7 +193,7 @@
                     this.alertText = '请输入门牌号等详细地址'
                     return
                 }
-                addNewAddress(this.linkId, this.name, this.address_detail, this.userlocation.longitude, this.userlocation.latitude, this.phone, this.province.value, this.city.value, this.district.value, this.linkState).then(res=>{
+                addNewAddress(this.linkId, this.name, this.address_detail, this.userlocation.lng, this.userlocation.lat, this.phone, this.province.value, this.city.value, this.district.value, this.linkState).then(res=>{
                   if (res.message) {
                     this.showAlert = true;
                     this.alertText = res.message;
